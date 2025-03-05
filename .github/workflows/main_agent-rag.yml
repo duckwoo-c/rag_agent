@@ -68,4 +68,4 @@ jobs:
         with:
           app-name: 'agent-rag'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7E35FEFBD42F48C5A347752070DD9E8A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3A3B76E3C80C4978BEC6AECCC85BDB11 }}
