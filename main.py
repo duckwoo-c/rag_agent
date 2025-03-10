@@ -42,10 +42,12 @@ if IS_LOCAL==False:
     import sys
     sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
     ## Environment parameter
-    AZURE_API_INFO = json.loads(os.getenv("AZURE_API_INFO"))
+    AZURE_API_INFO = os.getenv("AZURE_API_INFO")
     print(f"Api info : {AZURE_API_INFO}")
-    MODEL_PARAMETER = json.loads(os.getenv("MODEL_PARAMETER"))
+    AZURE_API_INFO = json.loads(AZURE_API_INFO)
+    MODEL_PARAMETER = os.getenv("MODEL_PARAMETER")
     print(f"Model Para : {MODEL_PARAMETER}")
+    MODEL_PARAMETER = json.loads(MODEL_PARAMETER)
 
 if IS_LOCAL==True:
     from dev.config import AZURE_API_INFO, MODEL_PARAMETER
