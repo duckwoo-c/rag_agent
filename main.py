@@ -43,10 +43,8 @@ if IS_LOCAL==False:
     sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
     ## Environment parameter
     AZURE_API_INFO = os.getenv("AZURE_API_INFO")
-    print(f"Api info : {AZURE_API_INFO}")
     AZURE_API_INFO = json.loads(AZURE_API_INFO)
     MODEL_PARAMETER = os.getenv("MODEL_PARAMETER")
-    print(f"Model Para : {MODEL_PARAMETER}")
     MODEL_PARAMETER = json.loads(MODEL_PARAMETER)
 
 if IS_LOCAL==True:
@@ -238,7 +236,7 @@ workflow.add_node(
     "generate", generate
 )  # Generating a response after we know the documents are relevant
 # Call agent node to decide to retrieve or not
-workflow.add_node("recursive_end", recursive_end)
+#workflow.add_node("recursive_end", recursive_end)
 workflow.add_edge(START, "agent")
 
 # Decide whether to retrieve
@@ -262,7 +260,7 @@ workflow.add_conditional_edges(
 workflow.add_edge("generate", END)
 #workflow.add_edge("rewrite", "agent")
 workflow.add_edge("nodocument_end", END)
-workflow.add_edge("recursive_end", END)
+#workflow.add_edge("recursive_end", END)
 
 # Compile
 graph = workflow.compile()
