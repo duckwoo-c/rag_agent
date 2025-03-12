@@ -68,4 +68,4 @@ jobs:
         with:
           app-name: 'di-agent-rag'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B57FBBA3EF514EDCB6E6C3E9AA8F574E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AB2AA5F80F174F43A14148862AD1AD22 }}
